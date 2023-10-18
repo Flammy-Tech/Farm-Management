@@ -1,0 +1,86 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+a, li{
+    text-decoration: none;
+    list-style: none;
+    color: brown;
+}
+
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../assets/farm.jpg') no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh; /* Use min-height to ensure the content stretches to the bottom */
+    margin: 0;
+    padding-bottom: 40px; /* Add padding at the bottom to create space for the footer */
+}
+
+header {
+    text-align: center;
+    color: #fff;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+section#importance {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+}
+
+h2 {
+    font-size: 24px;
+    color: #fff;
+}
+
+.card {
+    border: none;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+    text-align: left;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+    border-radius: 1rem;
+    padding: 1rem;
+    color: #fff;
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+}
+
+.card-text {
+    font-size: 16px;
+    color: #fff;
+}
+
+.home-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+}
+
+footer {
+    text-align: center;
+    color: #fff;
+    padding: 0.5rem; 
+}
