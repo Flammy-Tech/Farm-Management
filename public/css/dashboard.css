@@ -34,6 +34,7 @@ body {
 
 }
 .navbar{
+    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -97,6 +98,7 @@ main {
     flex: 1;
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../assets/farm.jpg') no-repeat;
     background-size: cover;
+    height: 100vh;
 }
 
 .profile-img {
@@ -116,22 +118,29 @@ main {
 /* Orders */
 table {
     border-collapse: collapse;
+    border-radius: 2rem;
     width: 100%;
     color: #fff;
+    padding:1rem;
 }
 
 th, td {
     border: 1px solid black;
+    color: #fff;
     padding: 8px;
     text-align: left;
 }
 
-th {
-    background-color: #f2f2f2;
+.crop-buttons{
+    padding: 2rem;
+    gap: 2rem;
+
 }
 
-.crop-buttons{
-    margin-left: 2rem;
+.btn-refresh{
+    border-radius: 50%;
+    width: fit-content;
+    background: #754820;
 }
 
 
@@ -150,9 +159,10 @@ th {
 @media screen and (max-width: 768px) {
     /* Adjust styles for smaller screens here */
     .navbar {
-        height: 3rem;
+        height: 4rem;
     }
 
+    
     .logo {
         font-size: 20px;
     }
@@ -183,8 +193,4 @@ th {
         flex-direction: column; /* Display items vertically on mobile */
     }
 
-    .crop-buttons {
-        align-items: center;
-        justify-content: center;
-    }
 }

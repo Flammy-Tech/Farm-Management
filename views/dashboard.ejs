@@ -33,12 +33,31 @@
 
         <!-- Main Section -->
         <main class="tab-content">
-            <div id="schedules" data-tab-content class="active">Schedules </div>
+            <div id="schedules" data-tab-content >Schedules </div>
             <div id="livestock" data-tab-content>livestock </div>
-            <div id="plants" data-tab-content>
+            <div id="plants" class="active"data-tab-content>
                 <h1>My Crops</h1>
                 <div class="crop-buttons">
                     <button class="btn btn-success" id="openModalButton">New crop Type</button>
+                    <button class="btn-refresh" id="refreshButton"> <i class="fa fa-refresh fa-solid"></i> </button>
+                </div>
+                <div class="tab-content">
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">Name</th> 
+                                <th scope="col">Item Price/Piece</th>
+                                <th scope="col">Availability</th>
+                                <th scope="col">Order</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                        </tbody>
+
+                    </table>
                 </div>
             </div>
             <div id="fields" data-tab-content>fields </div>
@@ -55,14 +74,25 @@
                   <h4 class="modal-title">Crop Type Form</h4>
               </div>
               <div class="modal-body">
-                  <form id="cropForm">
+                  <form id="cropForm" action="/dashboard">
                       <div class="form-group">
-                          <label for="cropName">Crop Name</label>
-                          <input type="text" class="form-control" id="cropName" name="cropName" required>
+                          <label for="cropName"> <i class="fa fa-seedling fa-solid"></i> Crop Name</label>
+                          <input type="text" class="form-control" id="cropName" name="cropName"  placeholder="...">
                       </div>
+
                       <div class="form-group">
-                          <label for="cropDescription">Crop Description</label>
-                          <textarea class="form-control" id="cropDescription" name="cropDescription" rows="4"></textarea>
+                        <label for="Quantity"> <i class="fa fa-cubes fa-solid"></i> Quantity</label>
+                        <input type="text" class="form-control" id="Quantity" name="Quantity" placeholder="00">
+                    </div>
+
+                      <div class="form-group">
+                        <label for="cropPrice"> <i class="fa fa-coins fa-solid"></i> Price</label>
+                        <input type="text" class="form-control" id="cropPrice" name="cropPrice" placeholder="$00.00" required>
+                    </div>
+
+                      <div class="form-group">
+                          <label for="cropDescription"> <i class="fa fa-book fa-solid"></i> Notes</label>
+                          <textarea class="form-control" id="cropDescription" name="cropDescription" rows="4" placeholder="..."></textarea>
                       </div>
                   </form>
               </div>
@@ -73,8 +103,6 @@
           </div>
       </div>
     </div>
-
-
 
 
 </body>
