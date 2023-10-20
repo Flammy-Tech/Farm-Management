@@ -130,6 +130,20 @@ th {
     background-color: #f2f2f2;
 }
 
+.crop-buttons{
+    margin-left: 2rem;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* Media query for mobile screens */
@@ -163,5 +177,14 @@ th {
     .vertical-navbar li {
         width: 100%;
         padding: 10px 0;
+    }
+
+    .tab-content {
+        flex-direction: column; /* Display items vertically on mobile */
+    }
+
+    .crop-buttons {
+        align-items: center;
+        justify-content: center;
     }
 }

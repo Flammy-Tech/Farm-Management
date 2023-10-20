@@ -56,8 +56,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 verticalNavbar.style.display = "block";
             }
         });
+
+
+        //Modal dialog
+        $(document).ready(function () {
+            // Show the modal when the button is clicked
+            $("#openModalButton").click(function () {
+                $("#myModal").modal('show');
+            });
+
+            $("#closeModalButton").click(function () {
+                $("#myModal").modal('hide');
+            });
+        });
+
+
 });
 
 
 
-
+   

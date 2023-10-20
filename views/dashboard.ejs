@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <title>Dashboard</title>
 </head>
 <body>
@@ -20,91 +21,24 @@
     <div class="content">
         <!-- Vertical Navbar -->
         <nav class="vertical-navbar" id="vertical-navbar">
-
             <ul>
-
                 <li data-tab-target="#schedules"><i class="fa fa-calendar fa-solid"></i> Schedules</li>
                 <li data-tab-target="#livestock"><i class="fa fa-cow fa-solid"></i> Livestock</li>
                 <li data-tab-target="#plants"><i class="fa fa-leaf fa-solid"></i> Plants</li>
                 <li data-tab-target="#fields"><i class="fa fa-tree fa-solid"></i> Fields</li>
                 <li data-tab-target="#equipment"><i class="fa fa-tools fa-solid"></i> Equipment</li>
                 <li data-tab-target="#farmlocation"><i class="fa fa-map-location fa-solid"></i> farmlocation</li>
-
             </ul>
         </nav>
 
         <!-- Main Section -->
         <main class="tab-content">
             <div id="schedules" data-tab-content class="active">Schedules </div>
-            <div id="livestock" data-tab-content >livestock </div>
+            <div id="livestock" data-tab-content>livestock </div>
             <div id="plants" data-tab-content>
                 <h1>My Crops</h1>
                 <div class="crop-buttons">
-                    <button class="btn btn-success btn-rounded">New crop Type</button>
-                </div>
-
-                <div class="tab-info">
-                    <table class="table">
-                        <thead class="thead-dark">
-                          <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                      
-                      <table class="table">
-                        <thead class="thead-light">
-                          <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                          </tr>
-                        </tbody>
-                      </table>
+                    <button class="btn btn-success" id="openModalButton">New crop Type</button>
                 </div>
             </div>
             <div id="fields" data-tab-content>fields </div>
@@ -112,5 +46,36 @@
             <div id="farmlocation" data-tab-content>farmlocation </div>
         </main>
     </div>
+
+    <!-- Modal for New Crop Type -->
+    <div id="myModal" class="modal fade">
+      <div class="modal-dialog modal-dialog-centered ">
+          <div class="modal-content bg-dark text-white">
+              <div class="modal-header">
+                  <h4 class="modal-title">Crop Type Form</h4>
+              </div>
+              <div class="modal-body">
+                  <form id="cropForm">
+                      <div class="form-group">
+                          <label for="cropName">Crop Name</label>
+                          <input type="text" class="form-control" id="cropName" name="cropName" required>
+                      </div>
+                      <div class="form-group">
+                          <label for="cropDescription">Crop Description</label>
+                          <textarea class="form-control" id="cropDescription" name="cropDescription" rows="4"></textarea>
+                      </div>
+                  </form>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" id="closeModalButton" data-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-primary" form="cropForm">Save</button>
+              </div>
+          </div>
+      </div>
+    </div>
+
+
+
+
 </body>
 </html>
