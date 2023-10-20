@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
 
-        //Modal dialog
+        //Crops dialog
         $(document).ready(function () {
             // Show the modal when the button is clicked
             $("#openModalButton").click(function () {
@@ -69,6 +69,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 $("#myModal").modal('hide');
             });
         });
+
+        //Cows Modal
+
+        $(document).ready(function () {
+            // Show the modal when the button is clicked
+            $("#openCowModalButton").click(function () {
+                $("#cowModal").modal('show');
+            });
+
+            $("#closeCowModalButton").click(function () {
+                $("#cowModal").modal('hide');
+            });
+        });
+
+
 
 
 });

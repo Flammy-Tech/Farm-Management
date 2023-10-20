@@ -5,6 +5,10 @@
     font-family: Roboto, Arial, Helvetica, sans-serif;
 }
 
+h1{
+    color: #fff;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -95,6 +99,7 @@ body {
 }
 
 main {
+    padding: 0.5rem;
     flex: 1;
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../assets/farm.jpg') no-repeat;
     background-size: cover;
@@ -115,21 +120,41 @@ main {
     padding-top: 0;
 }
 
-/* Orders */
+/* Tables */
 table {
-    border-collapse: collapse;
-    border-radius: 2rem;
+    border-collapse: separate;
+    border-spacing: 0;
     width: 100%;
-    color: #fff;
-    padding:1rem;
+    border: 2px solid black;
+    border-radius: 10px;
 }
 
-th, td {
-    border: 1px solid black;
-    color: #fff;
+table th, table td {
     padding: 8px;
     text-align: left;
 }
+
+table th {
+    background-color: gold;
+    color: black;
+    font-weight: bold;
+    border: 1px solid black;
+}
+
+table tr {
+    background-color: #00000056;
+
+}
+
+table tr:hover {
+    border-color: #5c4804;
+}
+
+table {
+    border: 1px solid black;
+    color: #fff;
+}
+
 
 .crop-buttons{
     padding: 2rem;
@@ -143,8 +168,25 @@ th, td {
     background: #754820;
 }
 
+/* Modals */
+.modal-body {
+    display: flex;
+    flex-direction: column;
+}
 
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px; /* Add some spacing between form groups */
+}
 
+.form-group label {
+    margin-bottom: 5px; /* Add some spacing between the label and the input */
+}
+
+.form-group input {
+    padding: 5px;
+}
 
 
 
@@ -192,5 +234,54 @@ th, td {
     .tab-content {
         flex-direction: column; /* Display items vertically on mobile */
     }
+
+    main{
+        padding: 0.5rem;
+    }
+
+
+    /* Table */
+    table {
+        border-collapse: collapse;
+        border: none;
+        overflow: auto;
+    }
+
+    table th, table td {
+        padding: 6px;
+        display: block;
+    }
+    td{
+        border: none;
+        color: #fff;
+    }
+    td,th{
+        border: none;
+    }
+
+    table th {
+        background-color: rgba(255, 217, 0, 0.259);
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        color: black;
+        font-weight: bold;
+        border: none;
+    }
+
+    table tr {
+        background-color: #00000056;
+        margin-bottom: 10px;
+        border: 2px solid black;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    table tr:hover {
+        border-color: #5c4804;
+    }
+
 
 }
