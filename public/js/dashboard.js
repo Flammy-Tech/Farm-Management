@@ -83,6 +83,19 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
 
+        //Tools Modal
+
+        $(document).ready(function () {
+            // Show the modal when the button is clicked
+            $("#openToolsModalButton").click(function () {
+                $("#toolsModal").modal('show');
+            });
+
+            $("#closeToolsModalButton").click(function () {
+                $("#toolsModal").modal('hide');
+            });
+        });
+
 
 
 

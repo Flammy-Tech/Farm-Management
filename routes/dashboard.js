@@ -46,6 +46,20 @@ async function retrieveCows() {
     }
 }
 
+
+// Function to retrieve Tools
+async function retrieveTools() {
+    try {
+        const db = client.db(dbName);
+        const collection = db.collection("tools");
+        const documents = await collection.find({}).toArray();
+        return documents; // Return the retrieved data
+    } catch (err) {
+        console.error("Error retrieving Tools:", err);
+        throw err;
+    }
+}
+
 // Function to insert a document into a collection
 async function insertDocument(collectionName, document) {
     try {
@@ -66,7 +80,8 @@ router.route('/')
             await connectToDatabase();
             const crops = await retrieveCrops();
             const cows = await retrieveCows();
-            res.render('dashboard', { crops, cows });
+            const tools = await retrieveTools();
+            res.render('dashboard', { crops, cows, tools });
         } catch (error) {
             res.status(500).send('Internal Server Error');
         }
@@ -93,6 +108,15 @@ router.route('/')
                     milkPrice: req.body.milkPrice
                 };
                 await insertDocument("cows", newCow);
+            } else if (req.body.hasOwnProperty('receiverName')) {
+                // If the request has 'cowTag' property, it's for adding a cow
+                const newTools = {
+                    receiverName: req.body.receiverName,
+                    toolName: req.body.toolName,
+                    useLocation: req.body.useLocation,
+                    usedDate: req.body.usedDate
+                };
+                await insertDocument("tools", newTools);
             }
 
             res.redirect('/dashboard'); // Redirect to the product listing page

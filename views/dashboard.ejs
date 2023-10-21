@@ -25,7 +25,6 @@
                 <li data-tab-target="#schedules"><i class="fa fa-calendar fa-solid"></i> Schedules</li>
                 <li data-tab-target="#livestock"><i class="fa fa-cow fa-solid"></i> Livestock</li>
                 <li data-tab-target="#plants"><i class="fa fa-leaf fa-solid"></i> Plants</li>
-                <li data-tab-target="#fields"><i class="fa fa-tree fa-solid"></i> Fields</li>
                 <li data-tab-target="#equipment"><i class="fa fa-tools fa-solid"></i> Equipment</li>
                 <li data-tab-target="#farmlocation"><i class="fa fa-map-location fa-solid"></i> farmlocation</li>
             </ul>
@@ -34,7 +33,7 @@
         <!-- Main Section -->
         <main class="tab-content">
             <div id="schedules" data-tab-content >Schedules </div>
-            <div id="livestock" class="active" data-tab-content>
+            <div id="livestock" data-tab-content>
                 <div class="crop-buttons">
                     <button class="btn btn-success" id="openCowModalButton">Add Cows</button>
                     <button class="btn-refresh" id="refreshButton"> <i class="fa fa-refresh fa-solid"></i> </button>
@@ -120,8 +119,38 @@
                     
                 </div>
             </div>
-            <div id="fields" data-tab-content>fields </div>
-            <div id="equipment" data-tab-content>equipment </div>
+            <div id="equipment"  class="active"  data-tab-content>
+                <div class="crop-buttons">
+                    <button class="btn btn-success" id="openToolsModalButton">Add Equipment</button>
+                    <button class="btn-refresh" id="refreshButton"> <i class="fa fa-refresh fa-solid"></i> </button>
+                </div>
+                <div class="tab-content">
+                    <h1>Equipments</h1>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Receiver Name</th>
+                                <th>Tool Name</th>
+                                <th>Location</th>
+                                <th>Date</th>
+                               
+                            </tr>
+                        </thead>
+                        <tbody>
+                                  <!-- Add table product rows here -->
+                        <% for (let i = 0; i < tools.length; i++) { %>
+                            <tr>
+                                <td><%= tools[i].receiverName %></td>
+                                <td><%= tools[i].toolName %></td>
+                                <td><%= tools[i].useLocation %></td>
+                                <td><%= tools[i].usedDate %></td>
+                     
+                            </tr>
+                            <% } %>
+                     
+                        </tbody>
+                    </table>
+            </div>
             <div id="farmlocation" data-tab-content>farmlocation </div>
         </main>
     </div>
@@ -204,7 +233,45 @@
             </div>
         </div>
       </div>
-    
+
+      
+      <div id="toolsModal" class="modal fade">
+        <div class="modal-dialog modal-dialog-centered ">
+            <div class="modal-content bg-dark text-white">
+                <div class="modal-header">
+                    <h4 class="modal-title"><i class="fas fa-cow"></i> Add Cows</h4>
+
+                </div>
+                <div class="modal-body">
+                    <form  id="toolsForm" action="/dashboard" method="post">
+                        <div class="form-group">
+                            <label for="receiverName"> <i class="fas fa-person"></i> Tag</label>
+                            <input type="text" id="receiverName" name="receiverName" placeholder="Receiver Name" required>
+                        </div>
+  
+                        <div class="form-group">
+                            <label for="toolName"> <i class="fas fa-tools"></i> Type</label>
+                            <input type="text" id="toolName" name="toolName" placeholder="Tool Name" required>
+                      </div>
+  
+                        <div class="form-group">
+                            <label for="useLocation"> <i class="fa-solid fa-map-location"></i> Use Location</label>
+                            <input type="text" id="useLocation" name="useLocation"  placeholder="Use Location" required>
+                      </div>
+  
+                        <div class="form-group">
+                            <label for="usedDate"> <i class="fas fa-calendar"></i> Use Date and Time</label>
+                            <input type="datetime" id="usedDate" name="usedDate" placeholder="Date and Time" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="closeToolsModalButton" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" form="toolsForm">Save</button>
+                </div>
+            </div>
+        </div>
+      </div>
 
 
 </body>
